@@ -31,17 +31,17 @@ namespace HwcConsole
             }
         }
 
-        public void Run()
+        public void Start()
         {
             // Start Web Server
             if (!HostableWebCore.IsActivated)
             {
                 HostableWebCore.Activate(_applicationHostConfigPath, null, Guid.NewGuid().ToString());
             }
-            Reporter.Output.WriteLine("Listening. Press any key to exit...");
-            Console.ReadKey();
+        }
 
-            //Stop Web Server
+        public void Stop()
+        {
             if (HostableWebCore.IsActivated)
             {
                 HostableWebCore.Shutdown(false);

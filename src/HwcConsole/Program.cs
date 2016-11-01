@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace HwcConsole
@@ -12,6 +13,12 @@ namespace HwcConsole
     {
         public static int Main(string[] args)
         {
+            var exitEvent = new ManualResetEvent(false);
+            Console.CancelKeyPress += delegate (object sender, ConsoleCancelEventArgs e)
+            {
+                e.Cancel = true;
+                exitEvent.Set();
+            };
             var app = new CommandLineApplication
             {
                 Name = "hwc",
@@ -37,7 +44,11 @@ namespace HwcConsole
                 }
 
                 var server = new Server(Path.GetFullPath(config));
-                server.Run();
+                server.Start();
+                Reporter.Output.WriteLine("Listening. Press Ctrl + C to stop listening...");
+                exitEvent.WaitOne();
+                Reporter.Output.WriteLine("Exiting");
+                server.Stop();
                 return 0;
             });
 
