@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="applicationHostConfig" xml:space="preserve">
+    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+&lt;configuration&gt;
+  &lt;configSections&gt;
+    &lt;sectionGroup name="system.applicationHost"&gt;
+      &lt;section name="applicationPools" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
+      &lt;section name="configHistory" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
+      &lt;section name="customMetadata" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
+      &lt;section name="listenerAdapters" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
+      &lt;section name="log" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
+      &lt;section name="serviceAutoStartProviders" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
+      &lt;section name="sites" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
+      &lt;section name="webLimits" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
+    &lt;/sectionGroup&gt;
+    &lt;sectionGroup name="system.webServer"&gt;
+      &lt;section name="defaultDocument" overrideModeDefault="Allow" /&gt;
+      &lt;section name="globalModules" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
+      &lt;section name="modules" /&gt;
+      &lt;section name="caching" overrideModeDefault="Allow" /&gt;
+      &lt;section name="handlers" overrideModeDefault="Allow" /&gt;
+      &lt;section name="httpCompression" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
+      &lt;section name="httpErrors" overrideModeDefault="Allow" /&gt;
+      &lt;section name="httpLogging" overrideModeDefault="Allow" /&gt;
+      &lt;section name="staticContent" /&gt;
+      &lt;section name="serverRuntime" /&gt;
+      &lt;section name="httpProtocol" overrideModeDefault="Allow" /&gt;
+      &lt;sectionGroup name="security"&gt;
+        &lt;section name="access" /&gt;
+        &lt;sectionGroup name="authentication"&gt;
+          &lt;section name="anonymousAuthentication" overrideModeDefault="Allow" /&gt;
+          &lt;section name="windowsAuthentication" overrideModeDefault="Allow" /&gt;
+          &lt;section name="iisClientCertificateMappingAuthentication" /&gt;
+        &lt;/sectionGroup&gt;
+        &lt;section name="authorization" overrideModeDefault="Allow" /&gt;
+        &lt;section name="ipSecurity" overrideModeDefault="Deny" /&gt;
+        &lt;section name="dynamicIpSecurity" overrideModeDefault="Deny" /&gt;
+        &lt;section name="requestFiltering" overrideModeDefault="Allow" /&gt;
+      &lt;/sectionGroup&gt;
+      &lt;sectionGroup name="rewrite"&gt;
+        &lt;section name="rules" overrideModeDefault="Allow" /&gt;
+        &lt;section name="globalRules" overrideModeDefault="Deny" allowDefinition="AppHostOnly" /&gt;
+        &lt;section name="outboundRules" overrideModeDefault="Allow" /&gt;
+        &lt;section name="providers" overrideModeDefault="Allow" /&gt;
+        &lt;section name="rewriteMaps" overrideModeDefault="Allow" /&gt;
+        &lt;section name="allowedServerVariables" overrideModeDefault="Allow" /&gt;
+      &lt;/sectionGroup&gt;
+      &lt;section name="aspNetCore" overrideModeDefault="Allow" /&gt;
+    &lt;/sectionGroup&gt;
+  &lt;/configSections&gt;
+  &lt;system.applicationHost&gt;
+    &lt;applicationPools&gt;
+      &lt;add name="DefaultAppPool" managedRuntimeVersion="" managedPipelineMode="Integrated" /&gt;
+    &lt;/applicationPools&gt;
+    &lt;sites&gt;
+      &lt;site name="WebSite" id="1"&gt;
+        &lt;bindings&gt;
+          &lt;binding protocol="http" bindingInformation=":5000:localhost" /&gt;
+        &lt;/bindings&gt;
+        &lt;application path="/" applicationPool="DefaultAppPool"&gt;
+          &lt;virtualDirectory path="/" physicalPath="%systemdrive%\inetpub\wwwroot" /&gt;
+        &lt;/application&gt;
+      &lt;/site&gt;
+    &lt;/sites&gt;
+  &lt;/system.applicationHost&gt;
+  &lt;system.webServer&gt;
+    &lt;globalModules&gt;
+      &lt;add name="HttpLoggingModule" image="%windir%\System32\inetsrv\loghttp.dll" /&gt;
+      &lt;add name="UriCacheModule" image="%windir%\System32\inetsrv\cachuri.dll" /&gt;
+      &lt;add name="FileCacheModule" image="%windir%\System32\inetsrv\cachfile.dll" /&gt;
+      &lt;add name="TokenCacheModule" image="%windir%\System32\inetsrv\cachtokn.dll" /&gt;
+      &lt;add name="HttpCacheModule" image="%windir%\System32\inetsrv\cachhttp.dll" /&gt;
+      &lt;add name="StaticCompressionModule" image="%windir%\System32\inetsrv\compstat.dll" /&gt;
+      &lt;add name="DefaultDocumentModule" image="%windir%\System32\inetsrv\defdoc.dll" /&gt;
+      &lt;add name="DirectoryListingModule" image="%windir%\System32\inetsrv\dirlist.dll" /&gt;
+      &lt;add name="ProtocolSupportModule" image="%windir%\System32\inetsrv\protsup.dll" /&gt;
+      &lt;add name="StaticFileModule" image="%windir%\System32\inetsrv\static.dll" /&gt;
+      &lt;add name="AnonymousAuthenticationModule" image="%windir%\System32\inetsrv\authanon.dll" /&gt;
+      &lt;add name="WindowsAuthenticationModule" image="%windir%\System32\inetsrv\authsspi.dll" /&gt;
+      &lt;add name="UrlAuthorizationModule" image="%windir%\System32\inetsrv\urlauthz.dll" /&gt;
+      &lt;add name="RequestFilteringModule" image="%windir%\System32\inetsrv\modrqflt.dll" /&gt;
+      &lt;add name="CustomErrorModule" image="%windir%\System32\inetsrv\custerr.dll" /&gt;
+      &lt;add name="AspNetCoreModule" image="%SystemRoot%\system32\inetsrv\aspnetcore.dll" /&gt;
+    &lt;/globalModules&gt;
+    &lt;modules&gt;
+      &lt;add name="HttpLoggingModule" /&gt;
+      &lt;add name="HttpCacheModule" /&gt;
+      &lt;add name="StaticCompressionModule" /&gt;
+      &lt;add name="DefaultDocumentModule" /&gt;
+      &lt;add name="DirectoryListingModule" /&gt;
+      &lt;add name="ProtocolSupportModule" /&gt;
+      &lt;add name="StaticFileModule" /&gt;
+      &lt;add name="AnonymousAuthenticationModule" /&gt;
+      &lt;add name="WindowsAuthenticationModule" /&gt;
+      &lt;add name="UrlAuthorizationModule" /&gt;
+      &lt;add name="RequestFilteringModule" /&gt;
+      &lt;add name="CustomErrorModule" /&gt;
+      &lt;add name="AspNetCoreModule" /&gt;
+    &lt;/modules&gt;
+    &lt;handlers accessPolicy="Read, Script"&gt;
+    &lt;/handlers&gt;
+    &lt;security&gt;
+      &lt;authentication&gt;
+        &lt;anonymousAuthentication enabled="true" userName="IUSR" /&gt;
+        &lt;windowsAuthentication enabled="false" authPersistNonNTLM="true"&gt;
+          &lt;providers&gt;
+            &lt;add value="Negotiate" /&gt;
+            &lt;add value="NTLM" /&gt;
+          &lt;/providers&gt;
+        &lt;/windowsAuthentication&gt;
+      &lt;/authentication&gt;
+      &lt;authorization&gt;
+        &lt;add accessType="Allow" users="*" /&gt;
+      &lt;/authorization&gt;
+    &lt;/security&gt;
+    &lt;staticContent&gt;
+      &lt;mimeMap fileExtension=".html" mimeType="text/html" /&gt;
+      &lt;mimeMap fileExtension=".htm" mimeType="text/html" /&gt;
+      &lt;mimeMap fileExtension=".txt" mimeType="text/plain" /&gt;
+      &lt;mimeMap fileExtension=".jpg" mimeType="image/jpeg" /&gt;
+      &lt;mimeMap fileExtension=".js" mimeType="application/javascript" /&gt;
+      &lt;mimeMap fileExtension=".css" mimeType="text/css" /&gt;
+      &lt;mimeMap fileExtension=".gif" mimeType="image/gif" /&gt;
+      &lt;mimeMap fileExtension=".png" mimeType="image/png" /&gt;
+      &lt;mimeMap fileExtension=".xml" mimeType="text/xml" /&gt;
+    &lt;/staticContent&gt;
+    &lt;defaultDocument enabled="true"&gt;
+      &lt;files&gt;
+        &lt;add value="index.html" /&gt;
+      &lt;/files&gt;
+    &lt;/defaultDocument&gt;
+  &lt;/system.webServer&gt;
+&lt;/configuration&gt;</value>
+  </data>
+</root>
