@@ -118,136 +118,88 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="applicationHostConfig" xml:space="preserve">
-    <value>&lt;?xml version="1.0" encoding="utf-8"?&gt;
+    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 &lt;configuration&gt;
   &lt;configSections&gt;
     &lt;sectionGroup name="system.applicationHost"&gt;
       &lt;section name="applicationPools" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
-      &lt;section name="configHistory" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
-      &lt;section name="customMetadata" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
-      &lt;section name="listenerAdapters" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
-      &lt;section name="log" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
-      &lt;section name="serviceAutoStartProviders" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
-      &lt;section name="sites" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
-      &lt;section name="webLimits" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
+      &lt;section name="sites" overrideModeDefault="Allow" /&gt;
     &lt;/sectionGroup&gt;
+
     &lt;sectionGroup name="system.webServer"&gt;
       &lt;section name="defaultDocument" overrideModeDefault="Allow" /&gt;
-      &lt;section name="globalModules" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
-      &lt;section name="modules" /&gt;
-      &lt;section name="caching" overrideModeDefault="Allow" /&gt;
-      &lt;section name="handlers" overrideModeDefault="Allow" /&gt;
-      &lt;section name="httpCompression" allowDefinition="AppHostOnly" overrideModeDefault="Deny" /&gt;
-      &lt;section name="httpErrors" overrideModeDefault="Allow" /&gt;
-      &lt;section name="httpLogging" overrideModeDefault="Allow" /&gt;
-      &lt;section name="staticContent" /&gt;
-      &lt;section name="serverRuntime" /&gt;
-      &lt;section name="httpProtocol" overrideModeDefault="Allow" /&gt;
+      &lt;section name="globalModules" overrideModeDefault="Allow" /&gt;
+      &lt;section name="handlers" allowDefinition="MachineToApplication" overrideModeDefault="Allow" /&gt;
+      &lt;section name="modules" allowDefinition="MachineToApplication" overrideModeDefault="Deny" /&gt;
       &lt;sectionGroup name="security"&gt;
-        &lt;section name="access" /&gt;
+        &lt;section name="access" overrideModeDefault="Deny" /&gt;
         &lt;sectionGroup name="authentication"&gt;
-          &lt;section name="anonymousAuthentication" overrideModeDefault="Allow" /&gt;
-          &lt;section name="windowsAuthentication" overrideModeDefault="Allow" /&gt;
-          &lt;section name="iisClientCertificateMappingAuthentication" /&gt;
+          &lt;section name="anonymousAuthentication" overrideModeDefault="Deny" /&gt;
         &lt;/sectionGroup&gt;
-        &lt;section name="authorization" overrideModeDefault="Allow" /&gt;
-        &lt;section name="ipSecurity" overrideModeDefault="Deny" /&gt;
-        &lt;section name="dynamicIpSecurity" overrideModeDefault="Deny" /&gt;
-        &lt;section name="requestFiltering" overrideModeDefault="Allow" /&gt;
       &lt;/sectionGroup&gt;
-      &lt;sectionGroup name="rewrite"&gt;
-        &lt;section name="rules" overrideModeDefault="Allow" /&gt;
-        &lt;section name="globalRules" overrideModeDefault="Deny" allowDefinition="AppHostOnly" /&gt;
-        &lt;section name="outboundRules" overrideModeDefault="Allow" /&gt;
-        &lt;section name="providers" overrideModeDefault="Allow" /&gt;
-        &lt;section name="rewriteMaps" overrideModeDefault="Allow" /&gt;
-        &lt;section name="allowedServerVariables" overrideModeDefault="Allow" /&gt;
-      &lt;/sectionGroup&gt;
-      &lt;section name="aspNetCore" overrideModeDefault="Allow" /&gt;
+      &lt;section name="serverRuntime" overrideModeDefault="Deny" /&gt;
     &lt;/sectionGroup&gt;
   &lt;/configSections&gt;
+
+
   &lt;system.applicationHost&gt;
+
     &lt;applicationPools&gt;
-      &lt;add name="DefaultAppPool" managedRuntimeVersion="" managedPipelineMode="Integrated" /&gt;
+      &lt;add name="DefaultAppPool" /&gt;
     &lt;/applicationPools&gt;
+
     &lt;sites&gt;
-      &lt;site name="WebSite" id="1"&gt;
-        &lt;bindings&gt;
-          &lt;binding protocol="http" bindingInformation=":5000:localhost" /&gt;
-        &lt;/bindings&gt;
-        &lt;application path="/" applicationPool="DefaultAppPool"&gt;
-          &lt;virtualDirectory path="/" physicalPath="%systemdrive%\inetpub\wwwroot" /&gt;
+      &lt;site name="Default Web Site" id="1"&gt;
+        &lt;application path="/"&gt;
+          &lt;virtualDirectory path="/" physicalPath="replaceme" /&gt;
         &lt;/application&gt;
+        &lt;bindings&gt;
+          &lt;binding protocol="http" bindingInformation="*:8009:localhost" /&gt;
+        &lt;/bindings&gt;
       &lt;/site&gt;
+      &lt;applicationDefaults applicationPool="DefaultAppPool" /&gt;
+      &lt;virtualDirectoryDefaults allowSubDirConfig="true" /&gt;
     &lt;/sites&gt;
+
   &lt;/system.applicationHost&gt;
+
   &lt;system.webServer&gt;
-    &lt;globalModules&gt;
-      &lt;add name="HttpLoggingModule" image="%windir%\System32\inetsrv\loghttp.dll" /&gt;
-      &lt;add name="UriCacheModule" image="%windir%\System32\inetsrv\cachuri.dll" /&gt;
-      &lt;add name="FileCacheModule" image="%windir%\System32\inetsrv\cachfile.dll" /&gt;
-      &lt;add name="TokenCacheModule" image="%windir%\System32\inetsrv\cachtokn.dll" /&gt;
-      &lt;add name="HttpCacheModule" image="%windir%\System32\inetsrv\cachhttp.dll" /&gt;
-      &lt;add name="StaticCompressionModule" image="%windir%\System32\inetsrv\compstat.dll" /&gt;
-      &lt;add name="DefaultDocumentModule" image="%windir%\System32\inetsrv\defdoc.dll" /&gt;
-      &lt;add name="DirectoryListingModule" image="%windir%\System32\inetsrv\dirlist.dll" /&gt;
-      &lt;add name="ProtocolSupportModule" image="%windir%\System32\inetsrv\protsup.dll" /&gt;
-      &lt;add name="StaticFileModule" image="%windir%\System32\inetsrv\static.dll" /&gt;
-      &lt;add name="AnonymousAuthenticationModule" image="%windir%\System32\inetsrv\authanon.dll" /&gt;
-      &lt;add name="WindowsAuthenticationModule" image="%windir%\System32\inetsrv\authsspi.dll" /&gt;
-      &lt;add name="UrlAuthorizationModule" image="%windir%\System32\inetsrv\urlauthz.dll" /&gt;
-      &lt;add name="RequestFilteringModule" image="%windir%\System32\inetsrv\modrqflt.dll" /&gt;
-      &lt;add name="CustomErrorModule" image="%windir%\System32\inetsrv\custerr.dll" /&gt;
-      &lt;add name="AspNetCoreModule" image="%SystemRoot%\system32\inetsrv\aspnetcore.dll" /&gt;
-    &lt;/globalModules&gt;
-    &lt;modules&gt;
-      &lt;add name="HttpLoggingModule" /&gt;
-      &lt;add name="HttpCacheModule" /&gt;
-      &lt;add name="StaticCompressionModule" /&gt;
-      &lt;add name="DefaultDocumentModule" /&gt;
-      &lt;add name="DirectoryListingModule" /&gt;
-      &lt;add name="ProtocolSupportModule" /&gt;
-      &lt;add name="StaticFileModule" /&gt;
-      &lt;add name="AnonymousAuthenticationModule" /&gt;
-      &lt;add name="WindowsAuthenticationModule" /&gt;
-      &lt;add name="UrlAuthorizationModule" /&gt;
-      &lt;add name="RequestFilteringModule" /&gt;
-      &lt;add name="CustomErrorModule" /&gt;
-      &lt;add name="AspNetCoreModule" /&gt;
-    &lt;/modules&gt;
-    &lt;handlers accessPolicy="Read, Script"&gt;
-    &lt;/handlers&gt;
-    &lt;security&gt;
-      &lt;authentication&gt;
-        &lt;anonymousAuthentication enabled="true" userName="IUSR" /&gt;
-        &lt;windowsAuthentication enabled="false" authPersistNonNTLM="true"&gt;
-          &lt;providers&gt;
-            &lt;add value="Negotiate" /&gt;
-            &lt;add value="NTLM" /&gt;
-          &lt;/providers&gt;
-        &lt;/windowsAuthentication&gt;
-      &lt;/authentication&gt;
-      &lt;authorization&gt;
-        &lt;add accessType="Allow" users="*" /&gt;
-      &lt;/authorization&gt;
-    &lt;/security&gt;
-    &lt;staticContent&gt;
-      &lt;mimeMap fileExtension=".html" mimeType="text/html" /&gt;
-      &lt;mimeMap fileExtension=".htm" mimeType="text/html" /&gt;
-      &lt;mimeMap fileExtension=".txt" mimeType="text/plain" /&gt;
-      &lt;mimeMap fileExtension=".jpg" mimeType="image/jpeg" /&gt;
-      &lt;mimeMap fileExtension=".js" mimeType="application/javascript" /&gt;
-      &lt;mimeMap fileExtension=".css" mimeType="text/css" /&gt;
-      &lt;mimeMap fileExtension=".gif" mimeType="image/gif" /&gt;
-      &lt;mimeMap fileExtension=".png" mimeType="image/png" /&gt;
-      &lt;mimeMap fileExtension=".xml" mimeType="text/xml" /&gt;
-    &lt;/staticContent&gt;
+
     &lt;defaultDocument enabled="true"&gt;
       &lt;files&gt;
+        &lt;add value="Default.htm" /&gt;
+        &lt;add value="Default.asp" /&gt;
+        &lt;add value="index.htm" /&gt;
         &lt;add value="index.html" /&gt;
+        &lt;add value="iisstart.htm" /&gt;
       &lt;/files&gt;
     &lt;/defaultDocument&gt;
+
+    &lt;globalModules&gt;
+      &lt;add name="DefaultDocumentModule" image="%windir%\System32\inetsrv\defdoc.dll" /&gt;
+      &lt;add name="AnonymousAuthenticationModule" image="%windir%\System32\inetsrv\authanon.dll" /&gt;
+      &lt;add name="UriCacheModule" image="%windir%\System32\inetsrv\cachuri.dll" /&gt;
+    &lt;/globalModules&gt;
+
+    &lt;handlers accessPolicy="Read, Script" &gt;
+      &lt;add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModule" resourceType="Unspecified" /&gt;
+    &lt;/handlers&gt;
+
+    &lt;modules&gt;
+      &lt;add name="AnonymousAuthenticationModule" lockItem="true" /&gt;
+    &lt;/modules&gt;
+
+    &lt;security&gt;
+
+      &lt;access sslFlags="None" /&gt;
+
+      &lt;authentication&gt;
+        &lt;anonymousAuthentication enabled="true" userName="IUSR" /&gt;
+      &lt;/authentication&gt;
+
+    &lt;/security&gt;
   &lt;/system.webServer&gt;
+
 &lt;/configuration&gt;</value>
   </data>
 </root>

@@ -11,7 +11,7 @@ namespace HwcConsole
     public class Program
     {
         private static readonly string appHostConfigPath = Path.Combine(Directory.GetCurrentDirectory(), "applicationHost.config");
-        public static void GenerateAppHostConfig(string sitePath, string ancmPath)
+        public static void GenerateAppHostConfig(string sitePath)
         {
             var appHostconfig = Resources.applicationHostConfig;
 
@@ -20,9 +20,6 @@ namespace HwcConsole
 
             var vDirNode = document.SelectSingleNode("configuration/system.applicationHost/sites/site[@id='1']/application/virtualDirectory[@path='/']");
             vDirNode.Attributes["physicalPath"].Value = sitePath;
-
-            var ancmGlobalModuleNode = document.SelectSingleNode("configuration/system.webServer/globalModules/add[@name='AspNetCoreModule']");
-            ancmGlobalModuleNode.Attributes["image"].Value = ancmPath;
 
             document.Save(appHostConfigPath);
         }
@@ -43,7 +40,6 @@ namespace HwcConsole
             app.HelpOption("-h|--help");
 
             var sitePath = app.Option("-s|--site-path", "The path to your website", CommandOptionType.SingleValue);
-            var ancmPath = app.Option("-a|--ancm-path", "The path to aspnetcore.dll", CommandOptionType.SingleValue);
 
             app.OnExecute(() =>
             {
@@ -59,13 +55,7 @@ namespace HwcConsole
                     return 2;
                 }
 
-                var ancmPathValue = ancmPath.Value();
-                if (ancmPathValue == null)
-                {
-                    ancmPathValue = @"%SystemRoot%\\system32\\inetsrv\aspnetcore.dll";
-                }
-
-                GenerateAppHostConfig(sitePathValue, ancmPathValue);
+                GenerateAppHostConfig(sitePathValue);
                 var server = new Server(appHostConfigPath);
                 server.Start();
                 Reporter.Output.WriteLine("Listening. Press Ctrl + C to stop listening...");

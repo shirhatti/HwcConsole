@@ -19,7 +19,7 @@ namespace HwcConsole.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -61,14 +61,18 @@ namespace HwcConsole.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
         ///&lt;configuration&gt;
         ///  &lt;configSections&gt;
         ///    &lt;sectionGroup name=&quot;system.applicationHost&quot;&gt;
         ///      &lt;section name=&quot;applicationPools&quot; allowDefinition=&quot;AppHostOnly&quot; overrideModeDefault=&quot;Deny&quot; /&gt;
-        ///      &lt;section name=&quot;configHistory&quot; allowDefinition=&quot;AppHostOnly&quot; overrideModeDefault=&quot;Deny&quot; /&gt;
-        ///      &lt;section name=&quot;customMetadata&quot; allowDefinition=&quot;AppHostOnly&quot; overrideModeDefault=&quot;Deny&quot; /&gt;
-        ///      &lt;section name=&quot;listenerAdapters&quot; allowDefinition=&quot;AppHostOnly&quot; overrideModeDefault=&quot; [rest of string was truncated]&quot;;.
+        ///      &lt;section name=&quot;sites&quot; overrideModeDefault=&quot;Allow&quot; /&gt;
+        ///    &lt;/sectionGroup&gt;
+        ///
+        ///    &lt;sectionGroup name=&quot;system.webServer&quot;&gt;
+        ///      &lt;section name=&quot;defaultDocument&quot; overrideModeDefault=&quot;Allow&quot; /&gt;
+        ///      &lt;section name=&quot;globalModules&quot; overrideModeDefault=&quot;Allow&quot; /&gt;
+        ///      &lt;section name= [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string applicationHostConfig {
             get {
