@@ -70,9 +70,8 @@ namespace HwcConsole.Properties {
         ///    &lt;/sectionGroup&gt;
         ///
         ///    &lt;sectionGroup name=&quot;system.webServer&quot;&gt;
-        ///      &lt;section name=&quot;defaultDocument&quot; overrideModeDefault=&quot;Allow&quot; /&gt;
         ///      &lt;section name=&quot;globalModules&quot; overrideModeDefault=&quot;Allow&quot; /&gt;
-        ///      &lt;section name= [rest of string was truncated]&quot;;.
+        ///      &lt;section name=&quot;handlers&quot; allowDefinition=&quot;MachineToApplication&quot; overrideModeDefault= [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string applicationHostConfig {
             get {

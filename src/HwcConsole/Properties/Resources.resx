@@ -127,7 +127,6 @@
     &lt;/sectionGroup&gt;
 
     &lt;sectionGroup name="system.webServer"&gt;
-      &lt;section name="defaultDocument" overrideModeDefault="Allow" /&gt;
       &lt;section name="globalModules" overrideModeDefault="Allow" /&gt;
       &lt;section name="handlers" allowDefinition="MachineToApplication" overrideModeDefault="Allow" /&gt;
       &lt;section name="modules" allowDefinition="MachineToApplication" overrideModeDefault="Deny" /&gt;
@@ -138,6 +137,10 @@
         &lt;/sectionGroup&gt;
       &lt;/sectionGroup&gt;
       &lt;section name="serverRuntime" overrideModeDefault="Deny" /&gt;
+      &lt;sectionGroup name="tracing"&gt;
+        &lt;section name="traceFailedRequests" overrideModeDefault="Allow" /&gt;
+        &lt;section name="traceProviderDefinitions" overrideModeDefault="Deny" /&gt;
+      &lt;/sectionGroup&gt;
     &lt;/sectionGroup&gt;
   &lt;/configSections&gt;
 
@@ -145,7 +148,7 @@
   &lt;system.applicationHost&gt;
 
     &lt;applicationPools&gt;
-      &lt;add name="DefaultAppPool" /&gt;
+      &lt;add name="DefaultAppPool" managedRuntimeVersion="" /&gt;
     &lt;/applicationPools&gt;
 
     &lt;sites&gt;
@@ -156,7 +159,12 @@
         &lt;bindings&gt;
           &lt;binding protocol="http" bindingInformation="*:8009:localhost" /&gt;
         &lt;/bindings&gt;
+        &lt;traceFailedRequestsLogging enabled="true" directory="%SystemDrive%\inetpub\logs\FailedReqLogFiles" maxLogFiles="10" /&gt;
       &lt;/site&gt;
+      &lt;siteDefaults&gt;
+        &lt;logFile logFormat="W3C" directory="%SystemDrive%\inetpub\logs\LogFiles" /&gt;
+        &lt;traceFailedRequestsLogging directory="%SystemDrive%\inetpub\logs\FailedReqLogFiles" /&gt;
+      &lt;/siteDefaults&gt;
       &lt;applicationDefaults applicationPool="DefaultAppPool" /&gt;
       &lt;virtualDirectoryDefaults allowSubDirConfig="true" /&gt;
     &lt;/sites&gt;
@@ -165,39 +173,33 @@
 
   &lt;system.webServer&gt;
 
-    &lt;defaultDocument enabled="true"&gt;
-      &lt;files&gt;
-        &lt;add value="Default.htm" /&gt;
-        &lt;add value="Default.asp" /&gt;
-        &lt;add value="index.htm" /&gt;
-        &lt;add value="index.html" /&gt;
-        &lt;add value="iisstart.htm" /&gt;
-      &lt;/files&gt;
-    &lt;/defaultDocument&gt;
-
     &lt;globalModules&gt;
-      &lt;add name="DefaultDocumentModule" image="%windir%\System32\inetsrv\defdoc.dll" /&gt;
+      &lt;add name="StaticFileModule" image="%windir%\System32\inetsrv\static.dll" /&gt;
       &lt;add name="AnonymousAuthenticationModule" image="%windir%\System32\inetsrv\authanon.dll" /&gt;
       &lt;add name="UriCacheModule" image="%windir%\System32\inetsrv\cachuri.dll" /&gt;
     &lt;/globalModules&gt;
 
-    &lt;handlers accessPolicy="Read, Script" &gt;
-      &lt;add name="aspNetCore" path="*" verb="*" modules="AspNetCoreModule" resourceType="Unspecified" /&gt;
+    &lt;handlers accessPolicy="Read" &gt;
+      &lt;add name="StaticFile" path="*" verb="*" modules="StaticFileModule" resourceType="Either" requireAccess="Read" /&gt;
     &lt;/handlers&gt;
 
     &lt;modules&gt;
+      &lt;add name="StaticFileModule" lockItem="true" /&gt;
       &lt;add name="AnonymousAuthenticationModule" lockItem="true" /&gt;
     &lt;/modules&gt;
 
     &lt;security&gt;
-
       &lt;access sslFlags="None" /&gt;
-
       &lt;authentication&gt;
         &lt;anonymousAuthentication enabled="true" userName="IUSR" /&gt;
       &lt;/authentication&gt;
-
     &lt;/security&gt;
+
+    &lt;tracing&gt;
+      &lt;traceFailedRequests /&gt;
+      &lt;traceProviderDefinitions /&gt;
+    &lt;/tracing&gt;
+
   &lt;/system.webServer&gt;
 
 &lt;/configuration&gt;</value>
